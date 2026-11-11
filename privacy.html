@@ -22,7 +22,7 @@
   </header>
 
   <section class="card">
-<p>最終更新日：2026年11月4日</p>
+<p>最終更新日：2026年11月11日</p>
 <p>Bestie（以下「本アプリ」）は、ともだちと画面に触れ合うためのアプリです。本アプリが扱う情報と、その使い方を説明します。</p>
 
 <h2>1. 扱う情報</h2>
@@ -34,36 +34,44 @@
 </ul>
 <p>これらは Google の Firebase Realtime Database に保存され、ともだちとのやり取りのためだけに使います。</p>
 
-<h2>2. 端末の中だけに保存する情報</h2>
+<h2>2. 呼び出しの着信と通知</h2>
+<ul>
+  <li><b>着信の宛先</b>：アプリを閉じていても電話のように着信を出すため、あなたの iPhone の着信用の宛先（Apple が発行する端末ごとの番号）を、ともだちとの部屋に保存します。部屋のメンバーだけが読めます。</li>
+  <li><b>着信サーバー</b>：呼び出したとき、Cloudflare 上の着信サーバーが、呼び出しが本当にあなたからのものかを確かめたうえで、相手の着信の宛先とあなたの表示名を Apple の通知サービスに送ります。着信サーバーはこれらを保存しません。</li>
+  <li><b>通知</b>：着信を出せないときは、あなたの表示名・ユーザーID・相手のユーザーIDを Apple の iCloud（CloudKit）に保存し、相手に「呼んでいます」と通知します。iCloud にサインインしている場合のみ使われます。</li>
+</ul>
+
+<h2>3. 端末の中だけに保存する情報</h2>
 <ul>
   <li><b>きろく</b>：通話中になぞった線の絵は、あなたの端末の中だけに保存され、外部には送信しません。</li>
   <li><b>カメラ</b>：招待のQRコードを読み取るときだけ使います。映像は保存も送信もしません。</li>
 </ul>
 
-<h2>3. 広告</h2>
+<h2>4. 広告</h2>
 <p>本アプリは Google AdMob による広告を表示することがあります。広告の配信のために、Google が端末の識別子・広告の表示やタップの情報・おおよその位置情報などを扱うことがあります。本アプリはトラッキングの許可（App Tracking Transparency）を求めず、ほかの会社のアプリやWebサイトをまたいだ追跡には使いません。詳しくは <a href="https://policies.google.com/technologies/ads?hl=ja">Google の広告に関するポリシー</a> をご覧ください。</p>
 
-<h2>4. 第三者への提供</h2>
-<p>法令に基づく場合を除き、上記の情報を第三者に販売・提供することはありません。利用しているサービス：Google Firebase（Authentication、Realtime Database）、Google AdMob。</p>
+<h2>5. 第三者への提供</h2>
+<p>法令に基づく場合を除き、上記の情報を第三者に販売・提供することはありません。利用しているサービス：Google Firebase（Authentication、Realtime Database）、Google AdMob、Apple（通知・iCloud）、Cloudflare（着信サーバー）。</p>
 
-<h2>5. データの削除</h2>
-<p>アプリの「じぶん」タブにある「データをすべて削除」から、ともだちとのつながり・表示名・サーバー上の自分のデータ・匿名アカウント・端末内のきろくを、いつでも削除できます。ともだちとのつながりは、1人ずつ「解除」することもできます。</p>
+<h2>6. アカウントとデータの削除</h2>
+<p>アプリの「じぶん」タブにある「アカウントを削除」から、アカウント（匿名のユーザーID）・ともだちとのつながり・表示名・着信の宛先・通知の予約・サーバー上の自分のデータ・端末内のきろくを、いつでも削除できます。ともだちとのつながりは、1人ずつ「解除」することもできます。</p>
 
-<h2>6. お子さまの利用</h2>
+<h2>7. お子さまの利用</h2>
 <p>本アプリは、13歳未満のお子さまから意図して情報を集めることはありません。</p>
 
-<h2>7. お問い合わせ</h2>
+<h2>8. お問い合わせ</h2>
 <p><a href="mailto:naotakahashi.g@gmail.com?subject=Bestie">naotakahashi.g@gmail.com</a></p>
   </section>
 
   <section class="card">
 <h2>Bestie Privacy Policy (English)</h2>
-<p>Last updated: November 4, 2026</p>
+<p>Last updated: November 11, 2026</p>
 <p><b>Information we handle:</b> your display name, an anonymous user ID created by Firebase Authentication (no email or phone number), your friend connections and invite codes, whether the app is open (online status), call status, and finger positions during a session. These are stored in Google Firebase Realtime Database and used only so you and your friends can connect.</p>
+<p><b>Calls and notifications:</b> to ring your friend like a phone call even when the app is closed, your iPhone's call address (a per-device token issued by Apple) is saved in your shared room, readable only by its members. When you call, our call server on Cloudflare checks that the call is really from you, then sends your friend's call address and your display name to Apple's notification service; the server does not store them. If a call can't be delivered that way, your display name, your user ID, and your friend's user ID are saved to Apple iCloud (CloudKit) to send a notification (only if you are signed in to iCloud).</p>
 <p><b>On your device only:</b> "Memories" (pictures of the lines you drew) are saved only on your device. The camera is used only to scan invite QR codes; images are never saved or sent.</p>
 <p><b>Ads:</b> the app may show ads from Google AdMob. Google may process device identifiers, ad interaction data, and approximate location to serve ads. The app does not ask for tracking permission and does not track you across other companies' apps or websites. See <a href="https://policies.google.com/technologies/ads">Google's advertising policies</a>.</p>
-<p><b>Sharing:</b> we do not sell or share this information with third parties except as required by law. Services used: Google Firebase (Authentication, Realtime Database) and Google AdMob.</p>
-<p><b>Deleting your data:</b> use "Delete All Data" on the Me tab to delete your friend connections, display name, your data on the server, your anonymous account, and the memories on your device at any time.</p>
+<p><b>Sharing:</b> we do not sell or share this information with third parties except as required by law. Services used: Google Firebase (Authentication, Realtime Database), Google AdMob, Apple (notifications, iCloud), and Cloudflare (call server).</p>
+<p><b>Deleting your account:</b> use "Delete Account" on the Me tab to delete your account (anonymous user ID), friend connections, display name, call address, notification subscription, your data on the server, and the memories on your device at any time.</p>
 <p><b>Children:</b> we do not knowingly collect information from children under 13.</p>
 <p><b>Contact:</b> <a href="mailto:naotakahashi.g@gmail.com?subject=Bestie">naotakahashi.g@gmail.com</a></p>
   </section>
